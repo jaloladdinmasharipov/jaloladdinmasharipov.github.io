@@ -164,6 +164,28 @@ a:hover .nav-3d-icon { transform: translateY(-1.5px) scale(1.12); box-shadow: 0 
 .logo-footer { height: 44px; width: auto; }
 .author-mark { width: 46%; height: auto; filter: drop-shadow(0 0 28px var(--accent-primary)); }
 
+/* Muallif rasmi: portret nisbat */
+div:has(> #authorPhoto:not([hidden])) { aspect-ratio: 4 / 5; }
+#authorPhoto { object-position: 50% 30%; }
+div:has(> [data-author-stat]):not(:has(> [data-author-stat]:not([hidden]))) { display: none; }
+
+/* Yakuniy blokdagi rasm */
+.cta-card > * { position: relative; }
+.cta-card > .cta-photo {
+  display: block; width: calc(100% + 80px); max-width: none; height: 300px; margin: -40px -40px 20px; object-fit: cover; object-position: 50% 20%;
+  -webkit-mask-image: linear-gradient(#000 55%, transparent); mask-image: linear-gradient(#000 55%, transparent);
+}
+@media (min-width: 768px) {
+  .cta-card { text-align: left; min-height: 440px; display: flex; flex-direction: column; justify-content: center; }
+  .cta-card > .cta-photo {
+    position: absolute; top: 0; right: 0; width: 52%; height: 100%; margin: 0; object-position: 45% 25%;
+    -webkit-mask-image: linear-gradient(to left, #000 45%, transparent); mask-image: linear-gradient(to left, #000 45%, transparent);
+  }
+  .cta-card > :not(.cta-photo) { max-width: 60%; }
+  .cta-card > p { margin-left: 0; }
+  .cta-card > div { justify-content: flex-start; flex-wrap: wrap; }
+}
+
 /* Segment tugmalar: til, tema, grafik */
 .seg {
   display: flex; align-items: center; gap: 2px; padding: 2px; border-radius: 9px;

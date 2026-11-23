@@ -94,6 +94,9 @@
       img.alt = CFG.author.name || VARS.brand;
       img.hidden = false;
       $('#authorPlaceholder').hidden = true;
+    } else {
+      $('#authorPhoto').hidden = true;
+      $('#authorPlaceholder').hidden = false;
     }
     if (CFG.author.name) {
       var n = $('#authorName');
