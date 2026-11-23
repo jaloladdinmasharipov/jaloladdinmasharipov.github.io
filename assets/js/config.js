@@ -57,7 +57,6 @@ window.SITE_CONFIG = {
   achievements: [
     { img: 'fxify-payout-2026-04',       firm: 'FXIFY',       type: 'payout',     date: '2026-04-20', amount: '$3,150', code: '8035492', verify: 'https://fxify.com/certified' },
     { img: 'fxify-evaluation-2026-03',   firm: 'FXIFY',       type: 'evaluation', date: '2026-03-31', code: '7182832', verify: 'https://fxify.com/certified' },
-    { img: 'upcomers-payout-2026-02',    firm: 'Upcomers',    type: 'payout',     date: '2026-02-10', amount: '$59', verify: 'https://app.upcomers.com/en/payouts/8c0ecf19-f37b-437a-b01b-6136d2c8a316' },
     { img: 'upcomers-ascended-2025-12',  firm: 'Upcomers',    type: 'challenge',  date: '2025-12-23' },
     { img: 'fundingpips-phase2-2024-11', firm: 'FundingPips', type: 'phase2',     date: '2024-11-14', verify: 'https://app.fundingpips.com/certificates/verify/8071f80a-a776-43c0-80a0-d8437d7f7a59' },
     { img: 'fundingpips-phase1-2024-11', firm: 'FundingPips', type: 'phase1',     date: '2024-11-08', verify: 'https://app.fundingpips.com/certificates/verify/0241a552-864a-4672-92c2-31157e2064b7' }
