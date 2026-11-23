@@ -61,6 +61,7 @@
     updateCalculator();
     renderSessions();
     renderAchievements();
+    renderStudents();
     Market.refresh();
   }
 
@@ -429,6 +430,28 @@
     }).join('');
   }
 
+  function renderStudents() {
+    var list = CFG.students || [];
+    $('#students').hidden = !list.length;
+    if (!list.length) return;
+    var firms = {};
+    list.forEach(function (a) { firms[a.firm] = 1; });
+    $('#stuCount').textContent = t('stu_count', { n: list.length, f: Object.keys(firms).length });
+    $('#stuTrack').innerHTML = list.map(function (a, i) {
+      var initials = a.name.split(/\s+/).map(function (w) { return w.charAt(0); }).join('').slice(0, 2);
+      var meta = [a.date ? achDate(a.date) : '', a.code ? t('ach_code', { code: esc(a.code) }) : ''].filter(Boolean).join(' · ');
+      return '<article class="stu-card">' +
+        '<div class="stu-who"><span class="stu-avatar" aria-hidden="true">' + esc(initials) + '</span>' +
+        '<div><h3>' + esc(a.name) + '</h3><span>' + esc(a.firm) + '</span></div></div>' +
+        '<button type="button" class="stu-img" data-stu-open="' + i + '" aria-label="' + t('ach_open') + ': ' + esc(a.name) + '">' +
+        '<img src="assets/img/students/' + esc(a.img) + '-s.webp" loading="lazy" decoding="async" alt=""></button>' +
+        '<p>' + achTitle(a) + '</p>' +
+        '<div class="ach-meta"><span>' + meta + '</span>' +
+        (a.verify ? '<a href="' + esc(a.verify) + '" target="_blank" rel="noopener noreferrer">' + t('ach_verify') + '</a>' : '') +
+        '</div></article>';
+    }).join('');
+  }
+
   (function () {
     var dlg = $('#achDialog');
     $$('[data-ach]').forEach(function (b) {
@@ -438,14 +461,29 @@
         renderAchievements();
       });
     });
+    function show(src, title) {
+      $('#achDialogImg').src = src;
+      $('#achDialogImg').alt = title;
+      $('#achDialogTitle').textContent = title;
+      dlg.showModal();
+    }
     $('#achGrid').addEventListener('click', function (e) {
       var b = e.target.closest('[data-ach-open]');
       if (!b) return;
       var a = CFG.achievements[+b.dataset.achOpen];
-      $('#achDialogImg').src = 'assets/img/certs/' + a.img + '.webp';
-      $('#achDialogTitle').textContent = a.firm + ' · ' + achDate(a.date);
-      $('#achDialogImg').alt = a.firm + ', ' + achDate(a.date);
-      dlg.showModal();
+      show('assets/img/certs/' + a.img + '.webp', a.firm + ' · ' + achDate(a.date));
+    });
+    var track = $('#stuTrack');
+    track.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-stu-open]');
+      if (!b) return;
+      var a = CFG.students[+b.dataset.stuOpen];
+      show('assets/img/students/' + a.img + '.webp', a.name + ' · ' + a.firm);
+    });
+    $$('[data-stu]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        track.scrollBy({ left: +b.dataset.stu * Math.min(track.clientWidth * 0.9, 720), behavior: reducedMotion ? 'auto' : 'smooth' });
+      });
     });
     $('#achClose').addEventListener('click', function () { dlg.close(); });
     dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });

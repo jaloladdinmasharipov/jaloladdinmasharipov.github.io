@@ -235,7 +235,16 @@ window.I18N = {
     ach_code: "Kod: {code}",
     ach_open: "Sertifikatni kattalashtirish",
     ach_close: "Yopish",
-    ach_note: "Sertifikatlar o‘tgan natijalarni ko‘rsatadi va kelajakdagi foydani kafolatlamaydi."
+    ach_note: "Sertifikatlar o‘tgan natijalarni ko‘rsatadi va kelajakdagi foydani kafolatlamaydi.",
+    stu_tag: "Shogirdlar yutuqlari",
+    stu_title: "Ular ham natijaga chiqishdi",
+    stu_subtitle: "JM Trading shogirdlarining prop kompaniya imtihonlaridan olgan sertifikatlari.",
+    stu_count: "{n} nafar shogird · {f} ta kompaniya",
+    stu_prev: "Oldingi",
+    stu_next: "Keyingi",
+    ach_t_phoenix: "Phoenix 2 Step Challenge yakunlandi",
+    ach_t_stellar: "Stellar Lite 2-Step, 1-bosqich (5K) o‘tildi",
+    stu_note: "Har kimning natijasi har xil bo‘ladi. Bu sertifikatlar siz ham shunday natijaga erishishingizni kafolatlamaydi."
   },
   ru: {
     nav_stats: "Результаты",
@@ -472,7 +481,16 @@ window.I18N = {
     ach_code: "Код: {code}",
     ach_open: "Увеличить сертификат",
     ach_close: "Закрыть",
-    ach_note: "Сертификаты отражают прошлые результаты и не гарантируют будущую прибыль."
+    ach_note: "Сертификаты отражают прошлые результаты и не гарантируют будущую прибыль.",
+    stu_tag: "Достижения учеников",
+    stu_title: "Они тоже пришли к результату",
+    stu_subtitle: "Сертификаты учеников JM Trading, полученные на испытаниях проп-компаний.",
+    stu_count: "{n} учеников · {f} компании",
+    stu_prev: "Назад",
+    stu_next: "Вперёд",
+    ach_t_phoenix: "Phoenix 2 Step Challenge завершён",
+    ach_t_stellar: "Stellar Lite 2-Step, этап 1 (5K) пройден",
+    stu_note: "Результаты у всех разные. Эти сертификаты не гарантируют вам такой же результат."
   },
   en: {
     nav_stats: "Results",
@@ -709,6 +727,15 @@ window.I18N = {
     ach_code: "Code: {code}",
     ach_open: "Enlarge certificate",
     ach_close: "Close",
-    ach_note: "Certificates show past results and do not guarantee future profit."
+    ach_note: "Certificates show past results and do not guarantee future profit.",
+    stu_tag: "Student achievements",
+    stu_title: "They got there too",
+    stu_subtitle: "Certificates JM Trading students earned in prop firm evaluations.",
+    stu_count: "{n} students · {f} firms",
+    stu_prev: "Previous",
+    stu_next: "Next",
+    ach_t_phoenix: "Phoenix 2 Step Challenge completed",
+    ach_t_stellar: "Stellar Lite 2-Step Phase 1 (5K) passed",
+    stu_note: "Results vary from person to person. These certificates do not guarantee you the same outcome."
   }
 };

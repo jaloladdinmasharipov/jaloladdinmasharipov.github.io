@@ -62,6 +62,18 @@ window.SITE_CONFIG = {
     { img: 'fundingpips-phase1-2024-11', firm: 'FundingPips', type: 'phase1',     date: '2024-11-08', verify: 'https://app.fundingpips.com/certificates/verify/0241a552-864a-4672-92c2-31157e2064b7' }
   ],
 
+  // Shogirdlar yutuqlari. Faqat egasi rozi bo'lgan sertifikatlarni qo'shing. Ro'yxat bo'sh bo'lsa bo'lim ko'rinmaydi.
+  // type: evaluation | phase1 | phoenix | stellar.  Rasm: assets/img/students/<img>.webp va <img>-s.webp
+  students: [
+    { img: 'fundednext-kadambay',  name: 'Kadambay Djumaniyazov',  firm: 'FundedNext',  type: 'stellar',    date: '2026-02-13', verify: 'https://app.fundednext.com/trader/certificate/MTE3Nzc5OTAvOTRkZmI0NWI4YjVlZQ==' },
+    { img: 'fxify-raxmatjon',      name: 'Raxmatjon Iskandarov',   firm: 'FXIFY',       type: 'evaluation', date: '2025-08-06', code: '7153778', verify: 'https://fxify.com/certified' },
+    { img: 'fundingpips-dildora',  name: 'Dildora N.',             firm: 'FundingPips', type: 'phase1',     date: '2025-10-21', verify: 'https://app.fundingpips.com/certificates/verify/7c2383b7-50fc-4f58-805e-c375539b5197' },
+    { img: 'fundingpips-muzaffar', name: 'Muzaffar A.',            firm: 'FundingPips', type: 'phase1',     date: '2025-09-17', verify: 'https://app.fundingpips.com/certificates/verify/e25c8a42-6c15-486b-927b-18c79282e16c' },
+    { img: 'upcomers-alimardon',   name: 'Alimardon Ollaberganov', firm: 'Upcomers',    type: 'phoenix' },
+    { img: 'upcomers-jasur',       name: 'Jasur Matchanov',        firm: 'Upcomers',    type: 'phoenix' },
+    { img: 'upcomers-sevara',      name: 'Sevara Atadjanova',      firm: 'Upcomers',    type: 'phoenix' }
+  ],
+
   // Bozor bo'limi (TradingView). Boshqa juftlik qo'shish mumkin.
   market: {
     enabled: true,
