@@ -60,6 +60,7 @@
     applyLinks();
     updateCalculator();
     renderSessions();
+    renderAchievements();
     Market.refresh();
   }
 
@@ -394,6 +395,57 @@
         Object.keys(builtLang).forEach(function (id) { if (builtLang[id] !== locale()) render(id); });
       }
     };
+  })();
+
+  /* ---------- Shaxsiy yutuqlar ---------- */
+  var achFilter = 'all';
+  function achTitle(a) { return t('ach_t_' + a.type, { amount: esc(a.amount || '') }); }
+  function achDate(d) { return d.split('-').reverse().join('.'); }
+
+  function renderAchievements() {
+    var list = CFG.achievements || [];
+    var sec = $('#achievements');
+    $$('#achievements, a[href="#achievements"]').forEach(function (el) { el.hidden = !list.length; });
+    if (!list.length || !sec) return;
+    var firms = {};
+    list.forEach(function (a) { firms[a.firm] = 1; });
+    var payouts = list.filter(function (a) { return a.type === 'payout'; }).length;
+    $('#achFirms').textContent = Object.keys(firms).length;
+    $('#achExams').textContent = list.length - payouts;
+    $('#achPayouts').textContent = payouts;
+    $('#achGrid').innerHTML = list.map(function (a, i) {
+      if (achFilter !== 'all' && (a.type === 'payout') !== (achFilter === 'payout')) return '';
+      var meta = achDate(a.date) + (a.code ? ' · ' + t('ach_code', { code: esc(a.code) }) : '');
+      return '<article class="ach-card">' +
+        '<button type="button" class="ach-img" data-ach-open="' + i + '" aria-label="' + t('ach_open') + ': ' + esc(a.firm) + '">' +
+        '<img src="assets/img/certs/' + esc(a.img) + '-s.webp" width="720" height="509" loading="lazy" decoding="async" alt=""></button>' +
+        '<div class="ach-body"><div class="ach-firm">' + esc(a.firm) + '</div><h3>' + achTitle(a) + '</h3>' +
+        '<div class="ach-meta"><span>' + meta + '</span>' +
+        (a.verify ? '<a href="' + esc(a.verify) + '" target="_blank" rel="noopener noreferrer">' + t('ach_verify') + '</a>' : '') +
+        '</div></div></article>';
+    }).join('');
+  }
+
+  (function () {
+    var dlg = $('#achDialog');
+    $$('[data-ach]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        achFilter = b.dataset.ach;
+        $$('[data-ach]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        renderAchievements();
+      });
+    });
+    $('#achGrid').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-ach-open]');
+      if (!b) return;
+      var a = CFG.achievements[+b.dataset.achOpen];
+      $('#achDialogImg').src = 'assets/img/certs/' + a.img + '.webp';
+      $('#achDialogTitle').textContent = a.firm + ' · ' + achDate(a.date);
+      $('#achDialogImg').alt = a.firm + ', ' + achDate(a.date);
+      dlg.showModal();
+    });
+    $('#achClose').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
   })();
 
   /* ---------- Menyu ---------- */

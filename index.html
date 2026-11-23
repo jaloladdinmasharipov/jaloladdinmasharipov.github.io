@@ -130,6 +130,10 @@
           <span class="nav-3d-icon"><svg class="icon w-2.5 h-2.5" aria-hidden="true"><use href="#i-user"/></svg></span>
           <span data-i18n="nav_about">Muallif</span>
         </a>
+        <a href="#achievements" class="flex items-center hover:text-[var(--accent-primary)] transition-colors py-1 shrink-0">
+          <span class="nav-3d-icon"><svg class="icon w-2.5 h-2.5" aria-hidden="true"><use href="#i-award"/></svg></span>
+          <span data-i18n="nav_ach">Yutuqlar</span>
+        </a>
         <a href="#reviews" data-reviews hidden class="flex items-center hover:text-[var(--accent-primary)] transition-colors py-1 shrink-0">
           <span class="nav-3d-icon"><svg class="icon w-2.5 h-2.5" aria-hidden="true"><use href="#i-message-square"/></svg></span>
           <span data-i18n="nav_reviews">Fikrlar</span>
@@ -218,6 +222,10 @@
         <a href="#about" class="py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[var(--accent-primary)] flex items-center gap-2">
           <span class="nav-3d-icon"><svg class="icon w-3 h-3" aria-hidden="true"><use href="#i-user"/></svg></span>
           <span data-i18n="nav_about">Muallif</span>
+        </a>
+        <a href="#achievements" class="py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[var(--accent-primary)] flex items-center gap-2">
+          <span class="nav-3d-icon"><svg class="icon w-3 h-3" aria-hidden="true"><use href="#i-award"/></svg></span>
+          <span data-i18n="nav_ach">Yutuqlar</span>
         </a>
         <a href="#reviews" data-reviews hidden class="py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[var(--accent-primary)] flex items-center gap-2">
           <span class="nav-3d-icon"><svg class="icon w-3 h-3" aria-hidden="true"><use href="#i-message-square"/></svg></span>
@@ -979,6 +987,32 @@
     </div>
   </section>
 
+  <!-- ==================== SHAXSIY YUTUQLAR ==================== -->
+  <section id="achievements" class="py-24 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+        <div class="w-12 h-12 mx-auto rounded-2xl neon-3d-box text-[var(--accent-primary)] flex items-center justify-center mb-4">
+          <svg class="icon w-6 h-6" aria-hidden="true"><use href="#i-award"/></svg>
+        </div>
+        <span class="text-xs font-mono tracking-widest text-[var(--accent-primary)] uppercase font-bold" data-i18n="ach_tag">Shaxsiy yutuqlar</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2" data-i18n="ach_title">Prop kompaniyalar sertifikatlari</h2>
+        <p class="text-slate-400 mt-3 text-base" data-i18n="ach_subtitle">Imtihonlardan o‘tganimni va pul yechishga ruxsat olganimni tasdiqlovchi hujjatlar. Kattalashtirish uchun ustiga bosing.</p>
+      </div>
+      <div class="ach-stats reveal">
+        <div><b id="achFirms"></b><span data-i18n="ach_s_firms">prop kompaniya</span></div>
+        <div><b id="achExams"></b><span data-i18n="ach_s_exams">o‘tilgan imtihon</span></div>
+        <div><b id="achPayouts"></b><span data-i18n="ach_s_payouts">pul yechish sertifikati</span></div>
+      </div>
+      <div class="seg ach-filter" role="group" data-i18n-label="ach_tag">
+        <button type="button" class="seg-btn" data-ach="all" aria-pressed="true" data-i18n="ach_f_all">Hammasi</button>
+        <button type="button" class="seg-btn" data-ach="exam" aria-pressed="false" data-i18n="ach_f_exam">Imtihonlar</button>
+        <button type="button" class="seg-btn" data-ach="payout" aria-pressed="false" data-i18n="ach_f_payout">Pul yechish</button>
+      </div>
+      <div id="achGrid" class="ach-grid"></div>
+      <p class="text-xs text-slate-400 text-center mt-6" data-i18n="ach_note">Sertifikatlar o‘tgan natijalarni ko‘rsatadi va kelajakdagi foydani kafolatlamaydi.</p>
+    </div>
+  </section>
+
   <!-- ==================== REVIEWS / SOCIAL PROOF ==================== -->
   <section id="reviews" data-reviews hidden class="py-24 relative z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1217,6 +1251,11 @@
   </div>
 
   <button type="button" id="toTop" class="to-top" data-i18n-label="to_top"><svg class="icon w-5 h-5" aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
+  <dialog id="achDialog" class="ach-dialog" aria-labelledby="achDialogTitle">
+    <button type="button" id="achClose" class="ach-close" data-i18n-label="ach_close"><svg class="icon w-5 h-5" aria-hidden="true"><use href="#i-x"/></svg></button>
+    <img id="achDialogImg" src="data:," alt="">
+    <p id="achDialogTitle"></p>
+  </dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="assets/js/config.js"></script>

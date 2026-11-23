@@ -255,6 +255,28 @@ a:hover .nav-3d-icon { transform: translateY(-1.5px) scale(1.12); box-shadow: 0 
 /* Sharh namunasi */
 .sample-badge { padding: 4px 8px; border-radius: 6px; border: 1px dashed rgba(255, 255, 255, 0.3); color: #cbd5e1; font-size: 11px; font-weight: 600; }
 
+/* Shaxsiy yutuqlar */
+.ach-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 620px; margin: 0 auto 28px; text-align: center; }
+.ach-stats b { display: block; font: 800 34px/1.1 "JetBrains Mono", monospace; color: var(--accent-primary); }
+.ach-stats span { font-size: 13px; color: #94a3b8; }
+.ach-filter { width: max-content; margin: 0 auto 28px; }
+.ach-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 24px; }
+.ach-card { border-radius: 22px; overflow: hidden; background: var(--bg-card); border: 1px solid var(--border-color); transition: border-color 0.25s, transform 0.25s; }
+.ach-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+.ach-img { display: block; width: 100%; aspect-ratio: 842 / 595; background: #070b1c; cursor: zoom-in; overflow: hidden; }
+.ach-img img { width: 100%; height: 100%; object-fit: cover; }
+.ach-img:focus-visible { outline-offset: -3px; }
+.ach-body { padding: 16px 20px 18px; }
+.ach-firm { font-size: 13px; font-weight: 700; color: var(--accent-primary); }
+.ach-body h3 { margin-top: 4px; font-weight: 700; color: #fff; line-height: 1.35; }
+.ach-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px; font-size: 13px; color: #94a3b8; font-variant-numeric: tabular-nums; }
+.ach-meta a { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent-primary); }
+.ach-dialog { width: min(1100px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); margin: auto; padding: 0; border-radius: 18px; overflow: auto; background: #070b1c; border: 1px solid var(--border-hover); color: #fff; }
+.ach-dialog::backdrop { background: rgba(0, 0, 0, 0.82); }
+.ach-dialog img { display: block; width: 100%; height: auto; max-height: calc(100dvh - 90px); object-fit: contain; }
+.ach-dialog p { padding: 12px 18px; font-size: 14px; text-align: center; color: #cbd5e1; }
+.ach-close { position: absolute; top: 10px; right: 10px; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: rgba(0, 0, 0, 0.65); color: #fff; }
+
 /* FAQ */
 .faq-icon { transition: transform 0.3s; }
 .faq-q[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
