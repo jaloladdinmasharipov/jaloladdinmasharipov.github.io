@@ -62,6 +62,7 @@
     renderSessions();
     renderAchievements();
     renderStudents();
+    renderGifts();
     Market.refresh();
   }
 
@@ -488,6 +489,22 @@
     $('#achClose').addEventListener('click', function () { dlg.close(); });
     dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
   })();
+
+  /* ---------- Sovg'a PDF'lar ---------- */
+  function renderGifts() {
+    $('#giftGrid').innerHTML = (CFG.gifts || []).map(function (g) {
+      var n = (g.mod < 10 ? '0' : '') + g.mod;
+      var url = 'assets/pdf/' + esc(g.file);
+      var title = t('mod_' + n);
+      return '<article class="gift-card">' +
+        '<a class="gift-cover" href="' + url + '.pdf" target="_blank" rel="noopener" aria-label="' + t('gift_open') + ': ' + title + '">' +
+        '<img src="' + url + '.webp" width="800" height="450" loading="lazy" decoding="async" alt=""></a>' +
+        '<div class="gift-body"><h3>' + title + '</h3><span>' + t('gift_meta', { n: n, p: g.pages }) + '</span>' +
+        '<div class="gift-btns"><a class="gift-btn bg-gradient-btn" href="' + url + '.pdf" download>' +
+        '<svg class="icon w-4 h-4" aria-hidden="true"><use href="#i-download"/></svg> ' + t('gift_dl') + '</a>' +
+        '<a class="gift-btn gift-btn-ghost" href="' + url + '.pdf" target="_blank" rel="noopener">' + t('gift_open') + '</a></div></div></article>';
+    }).join('');
+  }
 
   /* ---------- Menyu ---------- */
   var menuBtn = $('#mobileMenuBtn'), menu = $('#mobileMenu');

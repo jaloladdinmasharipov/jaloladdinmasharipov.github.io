@@ -46,8 +46,12 @@ window.SITE_CONFIG = {
     seats: 15
   },
 
-  // Bepul to'plam bo'limi (PDF, Excel, video). Fayllar va botdagi start=gift tayyor bo'lgach true qiling.
-  leadMagnet: false,
+  // Sovg'a bo'limi: assets/pdf/<file>.pdf va muqova <file>.webp. mod = modul raqami. Bo'limni yashirish: leadMagnet: false
+  leadMagnet: true,
+  gifts: [
+    { mod: 1, pages: 9, file: 'JM-Trading-Modul-01-Treyding-va-moliyaviy-bozorlar' },
+    { mod: 6, pages: 8, file: 'JM-Trading-Modul-06-Fundamental-tahlil-va-DXY' }
+  ],
 
   // Muallif. photo: masalan 'assets/img/men.jpg'
   author: { photo: 'assets/img/author.webp', name: 'Jaloladdin Masharipov' },
