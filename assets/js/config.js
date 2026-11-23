@@ -63,8 +63,10 @@ window.SITE_CONFIG = {
   ],
 
   // Shogirdlar yutuqlari. Faqat egasi rozi bo'lgan sertifikatlarni qo'shing. Ro'yxat bo'sh bo'lsa bo'lim ko'rinmaydi.
-  // type: evaluation | phase1 | phoenix | stellar.  Rasm: assets/img/students/<img>.webp va <img>-s.webp
+  // type: payout (amount bilan) | evaluation | phase1 | phoenix | stellar.  Rasm: assets/img/students/<img>.webp va <img>-s.webp
   students: [
+    { img: 'wemastertrade-umidbek',    name: 'Sotimboyevich Umidbek', firm: 'WeMasterTrade', type: 'payout', date: '2026-10-23', amount: '$1,654.32', verify: 'https://wemastertrade.com/payout/' },
+    { img: 'wemastertrade-xursandbek', name: 'Xursandbek Latipov',    firm: 'WeMasterTrade', type: 'payout', date: '2026-09-08', amount: '$1,536.56', verify: 'https://wemastertrade.com/payout/' },
     { img: 'fundednext-kadambay',  name: 'Kadambay Djumaniyazov',  firm: 'FundedNext',  type: 'stellar',    date: '2026-02-13', verify: 'https://app.fundednext.com/trader/certificate/MTE3Nzc5OTAvOTRkZmI0NWI4YjVlZQ==' },
     { img: 'fxify-raxmatjon',      name: 'Raxmatjon Iskandarov',   firm: 'FXIFY',       type: 'evaluation', date: '2025-08-06', code: '7153778', verify: 'https://fxify.com/certified' },
     { img: 'fundingpips-dildora',  name: 'Dildora N.',             firm: 'FundingPips', type: 'phase1',     date: '2025-10-21', verify: 'https://app.fundingpips.com/certificates/verify/7c2383b7-50fc-4f58-805e-c375539b5197' },
