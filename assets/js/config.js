@@ -24,15 +24,18 @@ window.SITE_CONFIG = {
   stats: {
     years: 7,
     members: 1000,          // Telegram kanal obunachilari
-    aum: '$150,000+',
-    students: '350+'
+    aum: '',        // bo'sh bo'lsa ko'rinmaydi
+    students: ''    // bo'sh bo'lsa ko'rinmaydi
   },
 
   // Tasdiq havolasi (Myfxbook, FTMO sertifikati va h.k.).
   // Havola qo'yilgandagina saytda "Tasdiqlangan" so'zi chiqadi.
   proofUrl: '',
 
-  // Fikrlar: haqiqiy sharhlarni i18n.js ga yozgach true qiling.
+  // Fikrlar bo'limi. false bo'lsa bo'lim ham, menyudagi havola ham ko'rinmaydi.
+  showReviews: false,
+
+  // Haqiqiy sharhlarni i18n.js ga yozgach true qiling.
   // false bo'lsa kartalarda "Namuna" belgisi turadi, pul natijalari yashirin.
   reviewsAreReal: false,
 

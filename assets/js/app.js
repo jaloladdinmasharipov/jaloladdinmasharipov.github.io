@@ -103,6 +103,8 @@
     $$('[data-proof-link]').forEach(function (el) {
       if (CFG.proofUrl) { el.href = CFG.proofUrl; el.target = '_blank'; el.rel = 'noopener noreferrer'; }
     });
+    $$('[data-reviews]').forEach(function (el) { el.hidden = !CFG.showReviews; });
+    $$('[data-author-stat]').forEach(function (el) { el.hidden = !$('[data-cfg]', el).textContent; });
     $$('[data-lead]').forEach(function (el) { el.hidden = !CFG.leadMagnet; });
     if (!CFG.market.enabled) $$('[data-market]').forEach(function (el) { el.hidden = true; });
   }
