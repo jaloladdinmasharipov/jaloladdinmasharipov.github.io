@@ -534,6 +534,32 @@
     }).join('');
   }
 
+  /* ---------- Yandex Metrika ----------
+     Maqsadlar (reachGoal): link_channel, link_bot, link_admin, link_chat, pdf, calc, verify */
+  var metrikaId = /^\d{5,12}$/.test(String(CFG.metrika || '').trim()) ? Number(CFG.metrika) : 0;
+  function goal(name) { if (metrikaId && window.ym) window.ym(metrikaId, 'reachGoal', name); }
+
+  function initMetrika() {
+    $$('[data-metrika-note]').forEach(function (el) { el.hidden = !metrikaId; });
+    if (!metrikaId) return;
+    window.ym = window.ym || function () { (window.ym.a = window.ym.a || []).push(arguments); };
+    window.ym.l = Date.now();
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://mc.yandex.ru/metrika/tag.js';
+    document.head.appendChild(s);
+    window.ym(metrikaId, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: false });
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a');
+      if (!a) return;
+      if (a.dataset.link) goal('link_' + a.dataset.link);
+      else if (/\.pdf$/.test(a.pathname)) goal('pdf');
+      else if (a.closest('.ach-meta')) goal('verify');
+    });
+    var calcSent = false;
+    $('#calculator').addEventListener('input', function () { if (!calcSent) { calcSent = true; goal('calc'); } });
+  }
+
   /* ---------- Menyu ---------- */
   var menuBtn = $('#mobileMenuBtn'), menu = $('#mobileMenu');
   function toggleMenu(open) {
@@ -652,6 +678,7 @@
   loadRate();
   Market.init();
   initAnimations();
+  initMetrika();
   setInterval(renderSessions, 30000);
 
   var missing = ['channel', 'bot', 'admin'].filter(function (k) { return !baseUrl(k); });

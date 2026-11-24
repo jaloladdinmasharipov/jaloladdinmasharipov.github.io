@@ -57,6 +57,9 @@ window.SITE_CONFIG = {
   // Muallif. photo: masalan 'assets/img/men.jpg'
   author: { photo: 'assets/img/author.webp', name: 'Jaloladdin Masharipov' },
 
+  // Yandex Metrika hisoblagich raqami (faqat raqam). Bo'sh bo'lsa hech narsa yuklanmaydi.
+  metrika: '',
+
   // Shaxsiy yutuqlar. type: payout | evaluation | challenge | phase1 | phase2
   // img: assets/img/certs/<img>.webp (katta) va <img>-s.webp (kichik). verify: rasmiy tekshiruv havolasi, code: tekshiruv kodi.
   achievements: [

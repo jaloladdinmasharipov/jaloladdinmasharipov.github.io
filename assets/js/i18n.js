@@ -31,7 +31,7 @@ window.I18N = {
     stats_subtitle: "Treydingda muvaffaqiyat his-tuyg‘ular bilan emas, intizomli statistika va risk nazorati bilan o‘lchanadi.",
     stat_card1_num: "Yil",
     stat_card1_title: "Real Bozor Amaliyoti",
-    stat_card1_desc: "Forex, Kriptovalyuta, Oltin va Indekslar bozoridagi barcha inqiroz va ko‘tarilishlarni bosib o‘tgan tajriba.",
+    stat_card1_desc: "Oltin, EUR/USD, GBP/USD va Bitcoin bozorida {years} yildan ortiq amaliy tajriba.",
     stat_card1_badge: "Sinovdan o‘tgan strategiyalar",
     stat_card2_title: "Aniq juftliklar",
     stat_card2_desc: "XAU/USD (oltin), EUR/USD, GBP/USD va BTC/USD (Bitcoin). Hamma narsani emas, shu to‘rttasini chuqur kuzatamiz. Har bir signal aniq SMC setap asosida beriladi.",
@@ -273,9 +273,11 @@ window.I18N = {
     ind_bonus: "Alohida bonus: $100 real depozit (natijaga qarab qo‘shimcha kapital ajratish imkoniyati mavjud)",
     ind_btn: "INDIVIDUALga yozilish",
     ind_msg: "Assalomu alaykum! INDIVIDUAL o‘quv dasturiga yozilmoqchiman.",
-    bonus_terms: "Depozitning o‘zi yechib olinmaydi. $100 ni $200 qilsangiz, foydasi sizga qoladi.",
+    bonus_terms: "Depozitning o‘zi yechib olinmaydi. $100 ni $200 qilganingizda foydasini yechib olishingiz mumkin.",
     course_prog_both: "15 ta modul PRO guruhga ham, INDIVIDUAL dasturga ham kiradi.",
-    bot_rate: "≈ ${usd} · Markaziy bank kursi: {rate} so‘m ({date})"
+    bot_rate: "≈ ${usd} · Markaziy bank kursi: {rate} so‘m ({date})",
+    course_pay: "To‘lov shartnomada belgilangan tartibda oldindan amalga oshiriladi.",
+    metrika_note: "Sayt tashrif statistikasi uchun Yandex Metrika’dan foydalanadi."
   },
   ru: {
     nav_stats: "Результаты",
@@ -308,7 +310,7 @@ window.I18N = {
     stats_subtitle: "Успех в трейдинге измеряется не эмоциями, а строгой дисциплиной, статистикой и контролем рисков.",
     stat_card1_num: "Года",
     stat_card1_title: "Реальной практики",
-    stat_card1_desc: "Опыт прохождения всех кризисов и бычьих циклов на рынках Форекс, Криптовалют, Золота и Индексов.",
+    stat_card1_desc: "Более {years} лет практического опыта на рынках золота, EUR/USD, GBP/USD и Bitcoin.",
     stat_card1_badge: "Проверенные временем стратегии",
     stat_card2_title: "Выбранные пары",
     stat_card2_desc: "XAU/USD (золото), EUR/USD, GBP/USD и BTC/USD (Bitcoin). Не всё подряд, а эти четыре пары — глубоко. Каждый сигнал основан на конкретном SMC-сетапе.",
@@ -550,9 +552,11 @@ window.I18N = {
     ind_bonus: "Отдельный бонус: реальный депозит $100 (по результатам возможен дополнительный капитал)",
     ind_btn: "Записаться на INDIVIDUAL",
     ind_msg: "Здравствуйте! Хочу записаться на INDIVIDUAL программу.",
-    bonus_terms: "Сам депозит вывести нельзя. Если превратите $100 в $200, прибыль остаётся вам.",
+    bonus_terms: "Сам депозит вывести нельзя. Когда превратите $100 в $200, прибыль можно вывести.",
     course_prog_both: "Все 15 модулей входят и в PRO группу, и в INDIVIDUAL программу.",
-    bot_rate: "≈ ${usd} · курс ЦБ: {rate} сум ({date})"
+    bot_rate: "≈ ${usd} · курс ЦБ: {rate} сум ({date})",
+    course_pay: "Оплата вносится заранее в порядке, установленном договором.",
+    metrika_note: "Сайт использует Яндекс Метрику для статистики посещений."
   },
   en: {
     nav_stats: "Results",
@@ -585,7 +589,7 @@ window.I18N = {
     stats_subtitle: "Success in trading is measured by disciplined statistics and risk control, never by raw emotions.",
     stat_card1_num: "Years",
     stat_card1_title: "Live Market Experience",
-    stat_card1_desc: "Hands-on experience navigating through all major crises and market cycles in Forex, Crypto, Gold, and Indices.",
+    stat_card1_desc: "More than {years} years of hands-on experience in gold, EUR/USD, GBP/USD and Bitcoin.",
     stat_card1_badge: "Battle-tested trading systems",
     stat_card2_title: "Focused pairs",
     stat_card2_desc: "XAU/USD (gold), EUR/USD, GBP/USD and BTC/USD (Bitcoin). Not everything, just these four in depth. Every signal is based on a specific SMC setup.",
@@ -827,8 +831,10 @@ window.I18N = {
     ind_bonus: "Separate bonus: a real $100 deposit (extra capital may be allocated depending on results)",
     ind_btn: "Join INDIVIDUAL",
     ind_msg: "Hello! I would like to join the INDIVIDUAL program.",
-    bonus_terms: "The deposit itself cannot be withdrawn. If you turn $100 into $200, the profit is yours.",
+    bonus_terms: "The deposit itself cannot be withdrawn. Once you turn $100 into $200, you can withdraw the profit.",
     course_prog_both: "All 15 modules are included in both the PRO group and the INDIVIDUAL program.",
-    bot_rate: "≈ ${usd} · Central Bank rate: {rate} UZS ({date})"
+    bot_rate: "≈ ${usd} · Central Bank rate: {rate} UZS ({date})",
+    course_pay: "Payment is made in advance, as set out in the contract.",
+    metrika_note: "This site uses Yandex Metrica for visit statistics."
   }
 };
