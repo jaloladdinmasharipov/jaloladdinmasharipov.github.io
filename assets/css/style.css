@@ -287,9 +287,14 @@ div:has(> [data-author-stat]):not(:has(> [data-author-stat]:not([hidden]))) { di
 .offer-bonus { display: flex; gap: 10px; margin-top: 18px; padding: 13px 14px; border-radius: 14px; background: var(--badge-bg); color: var(--badge-text); font-size: 14px; font-weight: 600; line-height: 1.45; }
 .offer-bonus small { display: block; margin-top: 6px; font-size: 13px; font-weight: 500; color: #cbd5e1; }
 .mods-note { margin-top: 6px; font-size: 14px; color: #94a3b8; }
-.prog { margin-top: 24px; padding: 28px 24px; }
+.prog { padding: 28px 24px; min-width: 0; }
 @media (min-width: 640px) { .offer, .prog { padding: 32px; } }
-@media (min-width: 1024px) { .offers { grid-template-columns: repeat(3, 1fr); gap: 20px; } .offer { padding: 28px 24px; } }
+@media (min-width: 1024px) {
+  .offers { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .offer { padding: 28px 24px; }
+  .offer:first-child { grid-row: span 2; }      /* bot kartasi chapda, dastur PRO va INDIVIDUAL ostida */
+  .prog { grid-column: 2 / 4; margin-top: 0; }
+}
 @media (min-width: 1280px) { .offer { padding: 32px 28px; } }
 
 /* Kurs dasturi */
@@ -300,7 +305,8 @@ div:has(> [data-author-stat]):not(:has(> [data-author-stat]:not([hidden]))) { di
 .mods li b { flex: 0 0 22px; font-family: "JetBrains Mono", monospace; color: var(--accent-primary); }
 .mod-free { display: inline-block; margin-left: 4px; padding: 1px 7px; border-radius: 6px; background: var(--badge-bg); color: var(--badge-text); font-size: 11px; font-weight: 700; }
 @media (min-width: 560px) { .mods { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 1024px) { .mods { grid-template-columns: repeat(3, 1fr); column-gap: 32px; margin-top: 12px; } }
+@media (min-width: 1024px) { .mods { column-gap: 24px; margin-top: 12px; } }
+@media (min-width: 1280px) { .mods { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 /* Sovg'a PDF'lar */
 .gift-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 20px; margin-top: 28px; }
@@ -412,6 +418,49 @@ html.animations-ready .reveal.rd-4 { transition-delay: 360ms; }
   html.animations-ready :is(.reveal-left, .reveal-right):not(.active) { transform: translateY(24px); }
   .bg-glow { animation: none; opacity: 0.75; }
 }
+
+.stu-note { margin-top: 18px; font-size: 12px; color: #94a3b8; }
+
+/* Kalkulyator natijalari: kesilmasin, kerak bo'lsa keyingi qatorga o'tsin */
+#calculator .truncate { overflow: visible; white-space: normal; overflow-wrap: anywhere; }
+@media (min-width: 640px) and (max-width: 1279px) {
+  #outRiskAmount, #outLotSize, #outRewardAmount { font-size: 18px; line-height: 1.35; }
+}
+
+/* Barmoq bilan bosish uchun kattaroq tugmalar */
+@media (max-width: 1023px), (pointer: coarse) {
+  .seg-btn, .preset { min-height: 38px; min-width: 38px; }
+  .seg-btn { padding-inline: 10px; font-size: 12px; }
+  .preset { padding-inline: 12px; font-size: 13px; }
+  .plan-btn { min-height: 42px; }
+  .dot-btn { width: 36px; height: 36px; }
+  .ach-meta a, .gift-more a { display: inline-block; padding: 9px 0; }
+  .mod-free { padding: 6px 10px; }
+  footer a:not([class*="w-9"]) { display: inline-block; padding: 8px 0; }
+  footer a[class*="w-9"] { width: 42px; height: 42px; }
+}
+
+/* Telefonda ixchamroq sahifa */
+@media (max-width: 767px) {
+  main > section[class] { padding-top: 52px; padding-bottom: 52px; }
+  main > section#top[class] { padding-top: 104px; padding-bottom: 40px; }
+  main section [class*="mb-16"], main section [class*="mb-12"] { margin-bottom: 28px; }
+  #stats .grid { gap: 14px; }
+  #stats .glass-panel { padding: 20px; }
+  #stats .glass-panel .neon-3d-box { width: 44px; height: 44px; margin-bottom: 14px; }
+  #stats .glass-panel .text-4xl { font-size: 28px; line-height: 1.15; }
+  #stats .glass-panel > div:last-child { margin-top: 14px; padding-top: 12px; }
+  #how ol { gap: 14px; }
+  #how li { padding: 20px; }
+  #how li .neon-3d-box { width: 42px; height: 42px; margin-bottom: 14px; }
+  #calculator .glass-panel, #lead .glass-panel { padding: 20px; }
+  .ach-grid { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; margin-inline: -16px; padding: 4px 16px 14px; scrollbar-width: thin; scrollbar-color: var(--border-hover) transparent; }
+  .ach-card { flex: 0 0 84%; scroll-snap-align: center; }
+  .mods { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 16px; overflow-wrap: anywhere; }
+  .mods li { gap: 8px; font-size: 13px; }
+}
+@media (max-width: 399px) { html[lang="ru"] .mods { grid-template-columns: 1fr; } }
+@media (max-width: 359px) { .mods { grid-template-columns: 1fr; } .seg-btn { padding-inline: 7px; min-width: 34px; } }
 
 /* Juda tor telefonlar */
 @media (max-width: 359px) {
