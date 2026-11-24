@@ -22,7 +22,7 @@ window.SITE_CONFIG = {
 
   // Ko'rsatkichlar. FAQAT isbotlay oladigan raqamlarni yozing.
   stats: {
-    years: 7,
+    years: 4,
     members: 1000,          // Telegram kanal obunachilari
     aum: '',        // bo'sh bo'lsa ko'rinmaydi
     students: ''    // bo'sh bo'lsa ko'rinmaydi
