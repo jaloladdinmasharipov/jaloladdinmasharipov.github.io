@@ -191,8 +191,8 @@ window.I18N = {
     reviews_subtitle_demo: "Bu yerda o‘quvchilarimizning haqiqiy fikrlari joylashtiriladi. Hozircha namunalar ko‘rsatilgan.",
     review_sample: "Namuna",
     rating_label: "5 dan 5 baho",
-    bot_period_m1: "/ 1 oylik to‘liq obuna",
-    bot_period_m3: "/ 3 oylik to‘liq obuna",
+    bot_period_m1: "1 oylik to‘liq obuna",
+    bot_period_m3: "3 oylik to‘liq obuna",
     term_entry: "1-kirish:",
     term_tp2: "TP2 olindi",
     bot_trial: "🎁 {trial} kun bepul sinov",
@@ -274,7 +274,8 @@ window.I18N = {
     ind_btn: "INDIVIDUALga yozilish",
     ind_msg: "Assalomu alaykum! INDIVIDUAL o‘quv dasturiga yozilmoqchiman.",
     bonus_terms: "Depozitning o‘zi yechib olinmaydi. $100 ni $200 qilsangiz, foydasi sizga qoladi.",
-    course_prog_both: "15 ta modul PRO guruhga ham, INDIVIDUAL dasturga ham kiradi."
+    course_prog_both: "15 ta modul PRO guruhga ham, INDIVIDUAL dasturga ham kiradi.",
+    bot_rate: "≈ ${usd} · Markaziy bank kursi: {rate} so‘m ({date})"
   },
   ru: {
     nav_stats: "Результаты",
@@ -467,8 +468,8 @@ window.I18N = {
     reviews_subtitle_demo: "Здесь появятся реальные отзывы учеников. Пока показаны примеры.",
     review_sample: "Пример",
     rating_label: "Оценка 5 из 5",
-    bot_period_m1: "/ 1 месяц полной подписки",
-    bot_period_m3: "/ 3 месяца полной подписки",
+    bot_period_m1: "1 месяц полной подписки",
+    bot_period_m3: "3 месяца полной подписки",
     term_entry: "Вход 1:",
     term_tp2: "TP2 достигнут",
     bot_trial: "🎁 {trial} день бесплатно",
@@ -550,7 +551,8 @@ window.I18N = {
     ind_btn: "Записаться на INDIVIDUAL",
     ind_msg: "Здравствуйте! Хочу записаться на INDIVIDUAL программу.",
     bonus_terms: "Сам депозит вывести нельзя. Если превратите $100 в $200, прибыль остаётся вам.",
-    course_prog_both: "Все 15 модулей входят и в PRO группу, и в INDIVIDUAL программу."
+    course_prog_both: "Все 15 модулей входят и в PRO группу, и в INDIVIDUAL программу.",
+    bot_rate: "≈ ${usd} · курс ЦБ: {rate} сум ({date})"
   },
   en: {
     nav_stats: "Results",
@@ -743,8 +745,8 @@ window.I18N = {
     reviews_subtitle_demo: "Real student reviews will appear here. These are samples for now.",
     review_sample: "Sample",
     rating_label: "Rated 5 out of 5",
-    bot_period_m1: "/ 1 month full access",
-    bot_period_m3: "/ 3 months full access",
+    bot_period_m1: "1 month full access",
+    bot_period_m3: "3 months full access",
     term_entry: "Entry 1:",
     term_tp2: "TP2 reached",
     bot_trial: "🎁 {trial}-day free trial",
@@ -826,6 +828,7 @@ window.I18N = {
     ind_btn: "Join INDIVIDUAL",
     ind_msg: "Hello! I would like to join the INDIVIDUAL program.",
     bonus_terms: "The deposit itself cannot be withdrawn. If you turn $100 into $200, the profit is yours.",
-    course_prog_both: "All 15 modules are included in both the PRO group and the INDIVIDUAL program."
+    course_prog_both: "All 15 modules are included in both the PRO group and the INDIVIDUAL program.",
+    bot_rate: "≈ ${usd} · Central Bank rate: {rate} UZS ({date})"
   }
 };

@@ -40,6 +40,8 @@ window.SITE_CONFIG = {
   reviewsAreReal: false,
 
   pricing: {
+    // Zaxira kurs: sayt har kuni Markaziy bankdan o'zi oladi, ololmasa shuni ishlatadi
+    usd:    { rate: 12002.93, date: '24.11.2026' },
     bot:    { m1: 89, m3: 210 },   // $, botdagi narx bilan bir xil bo'lsin. Chegirma foizi o'zi hisoblanadi
     trialDays: 1,                  // botdagi bepul sinov kuni
     courses: { pro: 5500000, ind: 7990000 }   // so'mda: PRO guruh, INDIVIDUAL

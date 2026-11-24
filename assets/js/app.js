@@ -57,6 +57,7 @@
 
     applyLinks();
     updateCalculator();
+    renderBotPrice();
     renderSessions();
     renderAchievements();
     renderStudents();
@@ -83,9 +84,7 @@
 
   function applyConfig() {
     $$('[data-cfg]').forEach(function (el) { el.textContent = get(el.dataset.cfg); });
-    $$('[data-uzs]').forEach(function (el) {
-      el.textContent = String(CFG.pricing.courses[el.dataset.uzs]).replace(/\B(?=(\d{3})+$)/g, '\u00a0');
-    });
+    $$('[data-uzs]').forEach(function (el) { el.textContent = group(CFG.pricing.courses[el.dataset.uzs]); });
     $$('.counter').forEach(function (el) {
       if (el.dataset.cfg) el.dataset.target = get(el.dataset.cfg);
       el.textContent = fmtCount(el, Number(el.dataset.target));
@@ -167,10 +166,39 @@
     }
   });
 
-  /* ---------- VIP bot tariflari ---------- */
+  /* ---------- VIP bot tariflari ----------
+     So'mdagi narx = $ narx x Markaziy bank kursi, mingtagacha yaxlitlangan (botdagi hisob bilan bir xil) */
+  var usd = CFG.pricing.usd;
+  function group(n) { return String(n).replace(/\B(?=(\d{3})+$)/g, '\u00a0'); }
+
+  function renderBotPrice() {
+    var price = CFG.pricing.bot[plan];
+    $('#botPriceDisplay').textContent = group(Math.round(price * usd.rate / 1000) * 1000);
+    var parts = usd.rate.toFixed(2).split('.');
+    $('#botRate').textContent = t('bot_rate', { usd: price, rate: group(parts[0]) + (lang === 'en' ? '.' : ',') + parts[1], date: usd.date });
+  }
+
+  function useRate(r) {
+    if (r && r.rate > 5000 && r.rate < 50000 && /^\d\d\.\d\d\.\d{4}$/.test(r.date)) { usd = r; renderBotPrice(); return true; }
+    return false;
+  }
+
+  function loadRate() {
+    var today = new Date().toDateString(), saved = null;
+    try { saved = JSON.parse(load('usd_rate') || 'null'); } catch (e) {}
+    if (saved && saved.day === today && useRate(saved)) return;
+    if (!window.fetch) return;
+    fetch('https://cbu.uz/uz/arkhiv-kursov-valyut/json/USD/', { referrerPolicy: 'no-referrer' })
+      .then(function (x) { return x.json(); })
+      .then(function (d) {
+        var r = { rate: parseFloat(d[0].Rate), date: d[0].Date, day: today };
+        if (useRate(r)) store('usd_rate', JSON.stringify(r));
+      })
+      .catch(function () { /* config.js dagi zaxira kurs qoladi */ });
+  }
   function selectPlan(next) {
     plan = next;
-    $('#botPriceDisplay').textContent = '$' + CFG.pricing.bot[plan];
+    renderBotPrice();
     var p = $('#botPeriodDisplay');
     p.dataset.i18n = 'bot_period_' + plan; // til almashganda ham to'g'ri qoladi
     p.innerHTML = t(p.dataset.i18n);
@@ -621,6 +649,7 @@
   var urlLang = new URLSearchParams(location.search).get('lang');
   setLanguage(LANGS.indexOf(urlLang) >= 0 ? urlLang : (load('trader_lang') || 'uz'));
   selectPlan('m1');
+  loadRate();
   Market.init();
   initAnimations();
   setInterval(renderSessions, 30000);
