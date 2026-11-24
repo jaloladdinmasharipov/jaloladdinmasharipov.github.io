@@ -284,6 +284,8 @@ div:has(> [data-author-stat]):not(:has(> [data-author-stat]:not([hidden]))) { di
 .uzs-price b { font: 800 34px/1.1 "JetBrains Mono", monospace; letter-spacing: -0.03em; word-spacing: -0.35em; color: #fff; white-space: nowrap; }
 .uzs-dur { margin-top: 6px; font-size: 14px; color: #94a3b8; }
 .offer-bonus { display: flex; gap: 10px; margin-top: 18px; padding: 13px 14px; border-radius: 14px; background: var(--badge-bg); color: var(--badge-text); font-size: 14px; font-weight: 600; line-height: 1.45; }
+.offer-bonus small { display: block; margin-top: 6px; font-size: 13px; font-weight: 500; color: #cbd5e1; }
+.mods-note { margin-top: 6px; font-size: 14px; color: #94a3b8; }
 .prog { margin-top: 24px; padding: 28px 24px; }
 @media (min-width: 640px) { .offer, .prog { padding: 32px; } }
 @media (min-width: 1024px) { .offers { grid-template-columns: repeat(3, 1fr); gap: 20px; } .offer { padding: 28px 24px; } }

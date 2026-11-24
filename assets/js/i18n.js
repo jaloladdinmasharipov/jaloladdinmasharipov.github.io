@@ -264,7 +264,7 @@ window.I18N = {
     ind_tag: "Yakka tartibda",
     ind_seats: "1 nafar",
     ind_title: "INDIVIDUAL dastur",
-    ind_dur: "4 oy (2/2) davom etadi",
+    ind_dur: "4 oy: 2 oy nazariya + 2 oy amaliyot",
     ind_f1: "<strong>O‘quvchi soni:</strong> 1 nafar",
     ind_f2: "<strong>Kurs ichida:</strong> 11 ta strategiya",
     ind_f3: "Real tajriba",
@@ -272,7 +272,9 @@ window.I18N = {
     ind_f5: "Doimiy ustoz nazorati",
     ind_bonus: "Alohida bonus: $100 real depozit (natijaga qarab qo‘shimcha kapital ajratish imkoniyati mavjud)",
     ind_btn: "INDIVIDUALga yozilish",
-    ind_msg: "Assalomu alaykum! INDIVIDUAL o‘quv dasturiga yozilmoqchiman."
+    ind_msg: "Assalomu alaykum! INDIVIDUAL o‘quv dasturiga yozilmoqchiman.",
+    bonus_terms: "Depozitning o‘zi yechib olinmaydi. $100 ni $200 qilsangiz, foydasi sizga qoladi.",
+    course_prog_both: "15 ta modul PRO guruhga ham, INDIVIDUAL dasturga ham kiradi."
   },
   ru: {
     nav_stats: "Результаты",
@@ -538,7 +540,7 @@ window.I18N = {
     ind_tag: "Индивидуально",
     ind_seats: "1 человек",
     ind_title: "INDIVIDUAL программа",
-    ind_dur: "Длится 4 месяца (2/2)",
+    ind_dur: "4 месяца: 2 месяца теории + 2 месяца практики",
     ind_f1: "<strong>Учеников:</strong> 1 человек",
     ind_f2: "<strong>В курсе:</strong> 11 стратегий",
     ind_f3: "Реальный опыт",
@@ -546,7 +548,9 @@ window.I18N = {
     ind_f5: "Постоянный контроль наставника",
     ind_bonus: "Отдельный бонус: реальный депозит $100 (по результатам возможен дополнительный капитал)",
     ind_btn: "Записаться на INDIVIDUAL",
-    ind_msg: "Здравствуйте! Хочу записаться на INDIVIDUAL программу."
+    ind_msg: "Здравствуйте! Хочу записаться на INDIVIDUAL программу.",
+    bonus_terms: "Сам депозит вывести нельзя. Если превратите $100 в $200, прибыль остаётся вам.",
+    course_prog_both: "Все 15 модулей входят и в PRO группу, и в INDIVIDUAL программу."
   },
   en: {
     nav_stats: "Results",
@@ -812,7 +816,7 @@ window.I18N = {
     ind_tag: "One-on-one",
     ind_seats: "1 person",
     ind_title: "INDIVIDUAL program",
-    ind_dur: "4 months (2/2)",
+    ind_dur: "4 months: 2 months of theory + 2 months of practice",
     ind_f1: "<strong>Students:</strong> 1 person",
     ind_f2: "<strong>Inside the course:</strong> 11 strategies",
     ind_f3: "Real experience",
@@ -820,6 +824,8 @@ window.I18N = {
     ind_f5: "Ongoing mentor supervision",
     ind_bonus: "Separate bonus: a real $100 deposit (extra capital may be allocated depending on results)",
     ind_btn: "Join INDIVIDUAL",
-    ind_msg: "Hello! I would like to join the INDIVIDUAL program."
+    ind_msg: "Hello! I would like to join the INDIVIDUAL program.",
+    bonus_terms: "The deposit itself cannot be withdrawn. If you turn $100 into $200, the profit is yours.",
+    course_prog_both: "All 15 modules are included in both the PRO group and the INDIVIDUAL program."
   }
 };
