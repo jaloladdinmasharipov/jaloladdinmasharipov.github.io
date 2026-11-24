@@ -19,10 +19,8 @@
   /* ---------- Matnlar ---------- */
   var VARS = {
     years: CFG.stats.years,
-    seats: CFG.pricing.seats,
     trial: CFG.pricing.trialDays,
     disc3: pct(CFG.pricing.bot.m1 * 3, CFG.pricing.bot.m3),
-    discCourse: pct(CFG.pricing.course.old, CFG.pricing.course.now),
     brand: CFG.brand.first + ' ' + CFG.brand.second
   };
 
@@ -85,7 +83,9 @@
 
   function applyConfig() {
     $$('[data-cfg]').forEach(function (el) { el.textContent = get(el.dataset.cfg); });
-    $$('[data-price]').forEach(function (el) { el.textContent = '$' + get('pricing.' + el.dataset.price); });
+    $$('[data-uzs]').forEach(function (el) {
+      el.textContent = String(CFG.pricing.courses[el.dataset.uzs]).replace(/\B(?=(\d{3})+$)/g, '\u00a0');
+    });
     $$('.counter').forEach(function (el) {
       if (el.dataset.cfg) el.dataset.target = get(el.dataset.cfg);
       el.textContent = fmtCount(el, Number(el.dataset.target));
@@ -144,7 +144,7 @@
       delete a.dataset.unset;
       var q = '';
       if (a.dataset.start) q = 'start=' + a.dataset.start.replace('{plan}', plan);
-      if (name === 'admin') q = 'text=' + encodeURIComponent(t('course_msg'));
+      if (name === 'admin') q = 'text=' + encodeURIComponent(t(a.dataset.msg || 'course_msg'));
       a.href = url + (q ? (url.indexOf('?') < 0 ? '?' : '&') + q : '');
       a.target = '_blank';
       a.rel = 'noopener noreferrer';

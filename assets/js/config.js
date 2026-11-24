@@ -42,8 +42,7 @@ window.SITE_CONFIG = {
   pricing: {
     bot:    { m1: 89, m3: 210 },   // $, botdagi narx bilan bir xil bo'lsin. Chegirma foizi o'zi hisoblanadi
     trialDays: 1,                  // botdagi bepul sinov kuni
-    course: { now: 249, old: 400 },
-    seats: 15
+    courses: { pro: 5500000, ind: 7990000 }   // so'mda: PRO guruh, INDIVIDUAL
   },
 
   // Sovg'a bo'limi: assets/pdf/<file>.pdf va muqova <file>.webp. mod = modul raqami. Bo'limni yashirish: leadMagnet: false

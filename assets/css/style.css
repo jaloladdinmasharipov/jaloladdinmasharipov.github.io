@@ -277,6 +277,18 @@ div:has(> [data-author-stat]):not(:has(> [data-author-stat]:not([hidden]))) { di
 /* Sharh namunasi */
 .sample-badge { padding: 4px 8px; border-radius: 6px; border: 1px dashed rgba(255, 255, 255, 0.3); color: #cbd5e1; font-size: 11px; font-weight: 600; }
 
+/* Tariflar */
+.offers { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: stretch; }
+.offer { padding: 28px 24px; min-width: 0; }
+.uzs-price { margin-top: 22px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; color: #94a3b8; font-size: 16px; }
+.uzs-price b { font: 800 34px/1.1 "JetBrains Mono", monospace; letter-spacing: -0.03em; word-spacing: -0.35em; color: #fff; white-space: nowrap; }
+.uzs-dur { margin-top: 6px; font-size: 14px; color: #94a3b8; }
+.offer-bonus { display: flex; gap: 10px; margin-top: 18px; padding: 13px 14px; border-radius: 14px; background: var(--badge-bg); color: var(--badge-text); font-size: 14px; font-weight: 600; line-height: 1.45; }
+.prog { margin-top: 24px; padding: 28px 24px; }
+@media (min-width: 640px) { .offer, .prog { padding: 32px; } }
+@media (min-width: 1024px) { .offers { grid-template-columns: repeat(3, 1fr); gap: 20px; } .offer { padding: 28px 24px; } }
+@media (min-width: 1280px) { .offer { padding: 32px 28px; } }
+
 /* Kurs dasturi */
 .mods-tag { font-size: 12px; font-weight: 700; color: var(--accent-primary); }
 .mods-title { margin-top: 2px; font-size: 18px; font-weight: 800; color: #fff; }
@@ -284,7 +296,8 @@ div:has(> [data-author-stat]):not(:has(> [data-author-stat]:not([hidden]))) { di
 .mods li { display: flex; gap: 12px; padding: 9px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 14px; line-height: 1.4; color: #cbd5e1; }
 .mods li b { flex: 0 0 22px; font-family: "JetBrains Mono", monospace; color: var(--accent-primary); }
 .mod-free { display: inline-block; margin-left: 4px; padding: 1px 7px; border-radius: 6px; background: var(--badge-bg); color: var(--badge-text); font-size: 11px; font-weight: 700; }
-@media (min-width: 560px) { .mods { grid-template-columns: 1fr 1fr; } .mods li:last-child { grid-column: 1 / -1; border-bottom: 0; } }
+@media (min-width: 560px) { .mods { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .mods { grid-template-columns: repeat(3, 1fr); column-gap: 32px; margin-top: 12px; } }
 
 /* Sovg'a PDF'lar */
 .gift-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 20px; margin-top: 28px; }
